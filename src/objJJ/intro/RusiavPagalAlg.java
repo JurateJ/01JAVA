@@ -1,9 +1,11 @@
+package objJJ.intro;
+
 public class RusiavPagalAlg {
 
     public static void main(String[] args) {
         int[] U = { -10, 0, 2, 9, -5};
         int kuris; //  turintis mažiausią reikšmę
-        int t; // sukeitimui
+        int t; // sukeitimui laikinas
         for (int i = 0; i < U.length-1; i++) {
             kuris = i;
             for (int j = i + 1; j < U.length; j++) {
@@ -14,6 +16,7 @@ public class RusiavPagalAlg {
             U[i] = t;
         }
         System.out.println(U[0]);
+
     }
 }
 

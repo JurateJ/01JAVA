@@ -1,3 +1,5 @@
+package objJJ.intro;
+
 public class Rusiavimas {
     // NEBAIGTAS   - nuo didz iki maziausio,
     public static void main(String[] args) {
