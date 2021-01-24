@@ -9,20 +9,22 @@ public class Mokinas {
     private String address;  //null default
 
     public Mokinas(String firstName, String lastName) {
-        getName(firstName, lastName);
+        setFirstName(firstName);
+        setLastName(lastName);
         this.level = 1;    // galima ir nurodyt this, bet nera
     }
     public Mokinas(String firstName, String lastName, int level) {
         this(firstName, lastName);
+        this.level = level;
 //        if (name == null || name.length() <= 1) {
 //            throw new IllegalArgumentException("Neteisngas vardas");
 //        }
     }
     //Geteriai ir seteriai
+
 //    public String getName() {
 //        return name;
 //    }
-
     public String getFirstName() {
         return firstName;
     }
