@@ -1,12 +1,4 @@
 package objJJ.FailoNusk.turnyras;
-/*     Turnyras:
-        Zaidejas:
-            Zmones
-            Pora:
-                1) Zmogus + Zmogus
-                2) Poros laimetojas + Zmogus
-                3) Poros laimetojas + Poros laimetojas
- */
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -16,32 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println("Prad duom:" + args.length);
-//        if (args.length > 0) {
-//            for (String a : args) System.out.println(a);
-//        }
-
         if (args.length == 1) {
             fileMode(args[0]);
         } else {
             System.err.println("Klaida - nera failo");
         }
         System.out.println("Pabaiga");
-
-//        Zmogus z1 = new Zmogus("Jonas");
-//        Zmogus z2 = new Zmogus("Ona");
-//        Pora p1 = new Pora(z1, z2);
-//        Pora p2 = new Pora(p1, new Zmogus("Kazys"));
-//        Pora p3 = new Pora(p1, p2);
-//
-//        System.out.println(z1.getNumber() + ". " + z1.vardasPoroje());
-//        System.out.println(z2.getNumber() + ". " + z2.vardasPoroje());
-//        System.out.println(p1.getNumber() + ". " + p1.vardasPoroje());
-//        System.out.println(p2.getNumber() + ". " + p2.vardasPoroje());
-//        System.out.println(p3.getNumber() + ". " + p3.vardasPoroje());
-//
-//        Zaidejas a1 = z1; //
-//        Zaidejas a2 = p1;
 
         Zaidejas[] zaidejai = pradiniaiDuomenys();
         int etapas = 1;
@@ -51,9 +23,6 @@ public class Main {
             printEtapas(etapas, zaidejai);
             etapas++;
         } while (zaidejai.length > 1);
-
-        // Zaidejas zzz = new Zaidejas();
-
     }
 
     private static void fileMode(String filename) {
@@ -67,8 +36,7 @@ public class Main {
             int c;
             StringBuilder sb = new StringBuilder();
             while ((c = reader.read()) != -1) {
-                if (c == '\n') {                           //jei eil pabaiga
-                    // System.out.println("Eil pabaiga");
+                if (c == '\n') {
                     writer.write(sb.toString() + "\n");
                     sb = new StringBuilder();             // sukuriam nauja
                 } else {    // nesibaige eil
@@ -83,13 +51,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        // 1 atidaryt ivedimo faila skaitymui
-        // 2 atidaryt isvedimo faila rasymui
-        // 3 kol nesibaige ivedimo failas
-        //      skaityti 1 eilute is failo
-        //      irasyti rez i isvedimo faila
-        // pabaiga
     }
 
     static Zaidejas[] pradiniaiDuomenys() {
@@ -103,6 +64,7 @@ public class Main {
                 new Zmogus("A7"),
                 new Zmogus("A8")
         };
+
         System.out.println("Zaidejai: ");
         for (Zaidejas z : zaidejai) {
             System.out.println("  " + z.getNumber() + ". " + z.laimetojas());
